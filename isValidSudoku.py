@@ -13,10 +13,12 @@ def isValidSudoku(self, board: List[List[str]]) -> bool:
             if el in rows[i]:
                 return False
             rows[i].add(el)
+
             #col validity
             if el in cols[j]:
                 return False
             cols[j].add(el)
+            
             #box validity
             box_index = (i//3)*3 + (j//3)
             if el in boxes[box_index]:

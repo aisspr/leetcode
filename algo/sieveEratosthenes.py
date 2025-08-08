@@ -13,4 +13,4 @@ def sieve_of_eratosthenes(limit):
         if is_prime[i]:
             for j in range(i*i, limit+1, i): # Mark multiples of i as not prime
                 is_prime[j] = False
-    return [i for i in range(2, limit+1), if is_prime[i]]
+    return [i for i in range(2, limit+1) if is_prime[i]]

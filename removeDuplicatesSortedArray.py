@@ -1,11 +1,10 @@
 def removeDuplicates(self, nums: List[int]) -> int:
-    n = len(nums)
-    if n == 0:
+    if not nums:
         return 0
-    i = 0
 
-    for j in range(1, n):
-        if nums[j] != nums[i]:
-            i += 1
-            nums[i] = nums[j]
-    return i+1
+    write = 0 #mark where the next unique el will go
+    for read in range(1, len(nums)):
+        if nums[read] != nums[write]:
+            write += 1
+            nums[write] = nums[read]
+    return write +1
